@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta property=”og:image” content=”paloma.png” />
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script type="text/javascript">
+		function fadeOut(element) {
+		    var op = 1;  // initial opacity
+		    var timer = setInterval(function () {
+		        if (op <= 0.1){
+		            clearInterval(timer);
+		            element.style.display = 'none';
+		        }
+		        element.style.opacity = op;
+		        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+		        op -= op * 0.1;
+		    }, 10);
+		};
+
+		function fadeIn(element) {
+	        element.style.display = 'initial';
+	        element.style.opacity = 1;
+		};
+
+		play = function(){
+			var vid = document.getElementById("vid");
+			var pp = document.getElementById("pp");
+
+			if(vid.paused){        
+				vid.play();   
+				fadeOut(pp);
+	    	}else{
+	    		vid.pause();
+				fadeIn(pp);
+		    }
+		};
+		window.onload = function(){
+			var vid = document.getElementById('vid');
+			var random = Math.round(Math.random() * 2);
+			random = random + 1;
+
+			var source = "video" + random + ".mp4";
+			vid.src = source;
+		};
+	</script>
+	</head>
+	<body>
+		<div id="wrap" class="wrapper" onclick="play()">
+		    <video id="vid" class="video">
+	    	    <source type="video/mp4" />
+		    </video>
+			<div id="pp" class="playpause"></div>
+		</div>
+	</body>
+</html> 
