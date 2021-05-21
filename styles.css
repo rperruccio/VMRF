@@ -13,10 +13,10 @@ body {
     height:100%;
 }
 .playpause {
-    background-image:url(media_play_pause_resume.png);
+    background-image:url(media_play.png);
     background-repeat:no-repeat;
-    width:20%;
-    height:20%;
+    width:100%;
+    height:100%;
     position:absolute;
     left:0%;
     right:0%;
