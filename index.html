@@ -37,7 +37,7 @@
 		};
 		window.onload = function(){
 			var vid = document.getElementById('vid');
-			var random = Math.round(Math.random() * 7) + 1;
+			var random = Math.floor(Math.random() * 7) + 1;
 
 			var source = "video" + random + ".mp4";
 			vid.src = source;
